@@ -3,26 +3,29 @@ from semantic import *
 def generar_suma(f, resultado, operando1, operando2):
     f.write("add $" + resultado + ", $" + operando1 + ", $" + operando2 + "\n")
 
+def generar_resta(f, resultado, operando1, operando2):
+    f.write("sub $" + resultado + ", $" + operando1 + ", $" + operando2 + "\n")
+
+def generar_multiplicacion(f, resultado, operando1, operando2):
+    f.write("mul $" + resultado + ", $" + operando1 + ", $" + operando2 + "\n")
+
+def generar_operaciones(f, operaciones):
+    for operacion in operaciones:
+        tipo_operacion = operacion[0]
+        resultado = operacion[1]
+        operando1 = operacion[2]
+        operando2 = operacion[3]
+
+        if tipo_operacion == "suma":
+            generar_suma(f, resultado, operando1, operando2)
+        elif tipo_operacion == "resta":
+            generar_resta(f, resultado, operando1, operando2)
+        elif tipo_operacion == "multiplicacion":
+            generar_multiplicacion(f, resultado, operando1, operando2)
+
 def generar_sumas_anidadas(f, sumas_anidadas):
-    if len(sumas_anidadas) == 1:
-        suma = sumas_anidadas[0]
-        generar_suma(f, suma[0], suma[1], suma[2])
-    elif len(sumas_anidadas) > 1:
-        suma_externa = sumas_anidadas[0]
-        resultado_externo = suma_externa[0]
-        operando1_externo = suma_externa[1]
-        operando2_externo = suma_externa[2]
-
-        # Generar la primera suma externa
-        generar_suma(f, resultado_externo, operando1_externo, operando2_externo)
-
-        # Generar las sumas internas anidadas
-        for suma_interna in sumas_anidadas[1:]:
-            resultado_interno = suma_interna[0]
-            operando1_interno = suma_interna[1]
-            operando2_interno = suma_interna[2]
-            generar_suma(f, resultado_interno, resultado_externo, operando2_interno)
-            resultado_externo = resultado_interno
+    for suma in sumas_anidadas:
+        generar_operaciones(f, suma)
 
 def generar_codigo_ensamblador():
     f = open("ensambladorPro.s", "w")
