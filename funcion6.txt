@@ -1,0 +1,13 @@
+sv +duckduck(dec +c){
+	op +x = 1
+  op +a = 5 
+  si (+x>4) {
+    rt +x;
+	}contra (+x<4){
+    op +y
+		rt +y = +x - +a - 3 * 3
+	}
+}
+start{
+  mst(+y)
+}

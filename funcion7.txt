@@ -1,0 +1,13 @@
+sv +duck(op +x, op +y){
+      si (+x>+y) {
+          rt +x + +y + 1
+      }contra{
+          rt +x * +y   
+      }
+}
++a = 10
++b = 10 + +duck(4, +a + 1)
+
+mst(+a)
+mst(+b)
+

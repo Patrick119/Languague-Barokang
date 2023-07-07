@@ -1,0 +1,5 @@
+start{
+  op +a
+  op +r
+  op +c
+}

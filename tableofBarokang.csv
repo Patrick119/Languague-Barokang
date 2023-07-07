@@ -1,0 +1,29 @@
+Nonterminal,start,keyleft,keyright,sv,id,leftpar,rightpar,retorno,coma,exit,ride,lr,mst,mayorsimbol,menorsimbol,menorigual,mayorigual,diferencia,simi,si,contra,contrasi,miss,op,dec,val,ch,float,igualdad,num,cc,suma,resta,multiplicacion,division,$
+START,FUNCION_INICIAL start keyleft VALUES ASIGNACION1 CONTROLSTRUCTURE1 COUT LLA keyright,,,FUNCION_INICIAL start keyleft VALUES ASIGNACION1 CONTROLSTRUCTURE1 COUT LLA keyright,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,FUNCION_INICIAL start keyleft VALUES ASIGNACION1 CONTROLSTRUCTURE1 COUT LLA keyright
+FUNCION_INICIAL,e,,,FUNCIONSTRUCTURE FUNCION_INICIAL,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+FUNCIONSTRUCTURE,,,,sv id leftpar PARAMETERS rightpar keyleft VALUES ASIGNACION1 CONTROLSTRUCTURE1 COUT LLA retorno VALUES keyright,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+PARAMETERS,,,,,,,e,,,,,,,,,,,,,,,,,TIPODEDATO id DEFINITION_PARAMETERS,TIPODEDATO id DEFINITION_PARAMETERS,TIPODEDATO id DEFINITION_PARAMETERS,TIPODEDATO id DEFINITION_PARAMETERS,TIPODEDATO id DEFINITION_PARAMETERS,,,,,,,,
+DEFINITION_PARAMETERS,,,,,,,e,,coma TIPODEDATO id DEFINITION_PARAMETERS,,,,,,,,,,,,,,,,,,,,,,,,,,,
+CONTROLSTRUCTURE1,e,,e,e,,,,e,,,,e,e,,,,,,,CONTROLSTRUCTURE2 CONTROLSTRUCTURE1,CONTROLSTRUCTURE2 CONTROLSTRUCTURE1,CONTROLSTRUCTURE2 CONTROLSTRUCTURE1,CONTROLSTRUCTURE2 CONTROLSTRUCTURE1,,,,,,,,,,,,,e
+CONTROLSTRUCTURE2,,,,,,,,,,,,,,,,,,,,IFELSEWHILE leftpar SELECT SYMBOLS SELECT rightpar keyleft VALUES ASIGNACION1 LEER NA CONTROLSTRUCTURE1 keyright,IFELSEWHILE leftpar SELECT SYMBOLS SELECT rightpar keyleft VALUES ASIGNACION1 LEER NA CONTROLSTRUCTURE1 keyright,IFELSEWHILE leftpar SELECT SYMBOLS SELECT rightpar keyleft VALUES ASIGNACION1 LEER NA CONTROLSTRUCTURE1 keyright,IFELSEWHILE leftpar SELECT SYMBOLS SELECT rightpar keyleft VALUES ASIGNACION1 LEER NA CONTROLSTRUCTURE1 keyright,,,,,,,,,,,,,
+LEER,e,,e,e,,,,e,,CIN2 LEER,e,e,e,,,,,,,e,e,e,e,,,,,,,,,,,,,e
+CIN2,,,,,,,,,,exit leftpar SELECT rightpar,,,,,,,,,,,,,,,,,,,,,,,,,,
+NA,e,,e,e,,,,e,,,NADA NA,e,e,,,,,,,e,e,e,e,,,,,,,,,,,,,e
+NADA,,,,,,,,,,,ride leftpar rightpar,,,,,,,,,,,,,,,,,,,,,,,,,
+LLA,,,e,,,,,e,,,,LLB LLA,,,,,,,,,,,,,,,,,,,,,,,,
+LLB,,,,,,,,,,,,lr leftpar rightpar,,,,,,,,,,,,,,,,,,,,,,,,
+COUT,e,,e,e,,,,e,,,,e,COUT2 COUT,,,,,,,,,,,,,,,,,,,,,,,e
+COUT2,,,,,,,,,,,,,mst leftpar SELECT rightpar,,,,,,,,,,,,,,,,,,,,,,,
+SYMBOLS,,,,,,,,,,,,,,mayorsimbol,menorsimbol,menorigual,mayorigual,diferencia,simi,,,,,,,,,,,,,,,,,
+IFELSEWHILE,,,,,,,,,,,,,,,,,,,,si,contra,contrasi,miss,,,,,,,,,,,,,
+VALUES,e,,e,e,DECLARACION VALUES,,,e,,e,e,e,e,,,,,,,e,e,e,e,DECLARACION VALUES,DECLARACION VALUES,DECLARACION VALUES,DECLARACION VALUES,DECLARACION VALUES,e,,,,,,,e
+DECLARACION,,,,,id,,,,,,,,,,,,,,,,,,,TIPODEDATO id,TIPODEDATO id,TIPODEDATO id,TIPODEDATO id,TIPODEDATO id,,,,,,,,
+TIPODEDATO,,,,,,,,,,,,,,,,,,,,,,,,op,dec,val,ch,float,,,,,,,,
+ASIGNACION1,e,,e,e,,,,e,,e,e,e,e,,,,,,,e,e,e,e,,,,,,ASIGNACION2 ASIGNACION1,,,,,,,e
+ASIGNACION2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,igualdad E,,,,,,,
+E,,,,,SELECT0 R,,,,,,,,,,,,,,,,,,,,,,,,,SELECT0 R,SELECT0 R,,,,,
+R,e,,e,e,,,,e,,e,e,e,e,,,,,,,e,e,e,e,,,,,,e,,,LOGICAL_OPERATORS SELECT0 R,LOGICAL_OPERATORS SELECT0 R,LOGICAL_OPERATORS SELECT0 R,LOGICAL_OPERATORS SELECT0 R,e
+SELECT0,,,,,SELECT,,,,,,,,,,,,,,,,,,,,,,,,,SELECT,SELECT,,,,,
+SELECT,,,,,id,,,,,,,,,,,,,,,,,,,,,,,,,num,cc,,,,,
+LOGICAL_OPERATORS,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,suma,resta,multiplicacion,division,
+

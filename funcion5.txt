@@ -1,0 +1,8 @@
+start {
+	op +x
+	si (x<4) {
+		op +a 
+	}contra leftpar (x>4){
+		rt +x
+	}
+}

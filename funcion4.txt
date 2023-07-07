@@ -1,0 +1,9 @@
+sv +duck(op +a,op +b, dec +c){
+	rt +b
+}
+start{
+op +a
+op  +r
++r=5
+mst(5)
+}
